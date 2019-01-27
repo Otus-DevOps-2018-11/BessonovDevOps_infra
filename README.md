@@ -3,14 +3,9 @@ BessonovDevOps Infra repository
                                                                                                      
 ## Home work cloud-bastion                                                                                        
 1. Config description:                                                                               
-        Bastion:                                                                                     
-          ext_ip:       35.241.171.191                                                               
-          int_ip:       10.132.0.2                                                                   
-                                                                                                     
-        internal:                                                                                    
-          ext_ip:       -                                                                            
-          int_ip:       10.132.0.3                                                                   
-                                                                                                     
+	bastion_IP = 35.241.171.191
+	someinternalhost_IP = 10.132.0.3
+
 2. Client host ssh config listing(~/.ssh/config):                                                         
                                                                                                      
 Host            *                                                                                    
