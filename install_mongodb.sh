@@ -8,7 +8,7 @@ mongo_apt="/etc/apt/sources.list.d/mongodb-org-3.2.list"
 if [ ! -f $mongo_apt ]
 then
 	echo "deb http://repo.mongodb.org/apt/ubuntu $(lsb_release -cs)/mongodb-org/3.2 multiverse" \
-	> /etc/apt/sources.list.d/mongodb-org-3.2.list
+	> $mongo_apt
 fi
 apt-get update && \ 
 apt-get install -y mongodb-org && \
