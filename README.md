@@ -29,14 +29,14 @@ Host            internal
 ## Home work #6 cloud-testapp (reddit-app deploy to gcc)
 
 1. Config description:
-  testapp_IP = 34.76.24.210
+	testapp_IP = 34.76.24.210
 	testapp_port = 9292
 
 2. Scripts:
-  install_ruby.sh - install ruby packages and update bundler
-  install_mongodb.sh - add mongo repo install mongodb and enable mongod
-  deploy.sh - clone reddit source install and start puma 
-  startup_script.sh - all above in one file
+	install_ruby.sh - install ruby packages and update bundler
+ 	install_mongodb.sh - add mongo repo install mongodb and enable mongod
+ 	deploy.sh - clone reddit source install and start puma 
+ 	startup_script.sh - all above in one file
 
 3. Run gcloud with startup script metadata:
   ```bash
