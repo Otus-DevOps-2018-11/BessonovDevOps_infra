@@ -8,5 +8,5 @@ gcloud compute instances create reddit-app \
   --tags puma-server \
   --restart-on-failure \
   --metadata-from-file \
-  startup-script=startup.sh
+  startup-script=startup_script.sh
   
