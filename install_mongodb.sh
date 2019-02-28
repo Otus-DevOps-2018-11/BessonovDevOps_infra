@@ -14,3 +14,4 @@ apt-get update && \
 apt-get install -y mongodb-org && \
 systemctl enable mongod && \
 systemctl start mongod
+
