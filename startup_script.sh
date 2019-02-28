@@ -10,7 +10,7 @@ apt-get-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv EA312927
 
 mongo_apt="/etc/apt-get/sources.list.d/mongodb-org-3.2.list"
 
-if [ ! -f $mongo_apt-get ]
+if [ ! -f $mongo_apt ]
 then
 	echo "deb http://repo.mongodb.org/apt-get/ubuntu $(lsb_release -cs)/mongodb-org/3.2 multiverse" \
 	> $mongo_apt
