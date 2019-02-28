@@ -33,12 +33,12 @@ Host            internal
 	testapp_port = 9292
 
 2. Scripts:
-  * install_ruby.sh - install ruby packages and update bundler
-  * install_mongodb.sh - add mongo repo install mongodb and enable mongod
-  * deploy.sh - clone reddit source install and start puma 
-  * startup.sh - all above in one file
+  install_ruby.sh - install ruby packages and update bundler
+  install_mongodb.sh - add mongo repo install mongodb and enable mongod
+  deploy.sh - clone reddit source install and start puma 
+  startup_script.sh - all above in one file
 
-3. Run gcloud with startup metadata:
+3. Run gcloud with startup script metadata:
   ```bash
   gcloud compute instances create reddit-app \
   --boot-disk-size=10GB \
