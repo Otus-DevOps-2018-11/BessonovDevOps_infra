@@ -29,8 +29,9 @@ Host            internal
 ## Home work #6 cloud-testapp (reddit-app deploy to gcc)
 
 1. Config description:   
-	testapp_IP = 34.76.24.210
-	testapp_port = 9292
+
+testapp_IP = 34.76.24.210
+testapp_port = 9292
 
 2. Scripts:
 	install_ruby.sh - install ruby packages and update bundler
