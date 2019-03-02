@@ -30,7 +30,7 @@ Host            internal
 
 1. Config description:   
 
-testapp_IP = 34.76.24.210
+testapp_IP = 34.76.71.184
 testapp_port = 9292
 
 2. Scripts:
