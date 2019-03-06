@@ -55,3 +55,26 @@ testapp_port = 9292
   ```bash
   gcloud compute firewall-rules create allow-9292-tcp-in --allow=TCP:9292
   ```
+## Home work #7 packer-base   
+
+1. Description   
+  Added packer config: packer/ubuntu16.json (with packer/variables.json)   
+  Builded GCP image reddit-base from source ubuntu16.04-lts with packer/scripts/install_ruby.sh, install_mongodb.sh   
+  Added packer config: packer/immutable.json   
+  Builded GCP image reddit-full from source reddit-base with deploy reddit-app and daemonize puma service   
+  Added packer/create-redditvm.sh to deploy reddit-app from reddit-full image
+  
+2. How to use   
+  build reddit-base:
+  ```bash
+  packer build -var-file=variables.json ubuntu16.json
+  ```
+
+  build reddit-full:
+  ```bash
+  packer build immutable.json
+  ```
+  deploy reddit-app image:   
+  ```bash
+  ./packer/create-redditvm.sh
+  ```
