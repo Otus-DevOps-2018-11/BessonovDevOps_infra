@@ -23,3 +23,4 @@ variable zone {
 variable disk_image {
   description = "Disk image"
 }
+
