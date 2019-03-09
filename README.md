@@ -78,3 +78,19 @@ testapp_port = 9292
   ```bash
   ./packer/create-redditvm.sh
   ```
+
+## Home work #8 terraform-1
+
+1. Description
+  - Added terraform config file to deploy reddit-base image in GCP main.tf
+  - Added outputs.tf to store output variable
+  - Added terraform variables.tf to described input vars
+  - Added terraform.tfvars to define input vars
+
+2. How to use
+  deploy reddit app with terraform:
+  ```bash
+  cd terraform
+  terraform apply
+  ``` 
+  
