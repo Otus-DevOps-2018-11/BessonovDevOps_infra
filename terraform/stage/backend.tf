@@ -1,7 +1,6 @@
 terraform {
   backend "gcs" {
-    bucket  = "storage-bessonov-test"
-    prefix  = "stage"
+    bucket = "storage-bessonov-test"
+    prefix = "stage"
   }
 }
-
