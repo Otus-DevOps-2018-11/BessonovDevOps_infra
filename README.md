@@ -94,3 +94,25 @@ testapp_port = 9292
   terraform apply
   ``` 
   
+## Home work #9 terraform-2
+
+1. Decription
+  - Packer config from terraform-1 ubuntu16.json devided into app.json and db.json to automate build app and db images respectively. 
+  - Terraform main.tf devided into app, db, vpc modules with each own main.tf, variables.tf, outputs.tf
+  - Added stage and prod configss, each using its own main.tf, variables.tf, outputs.tf, backend.tf, to deploy instances and config env. The main.tf of stage and prod using modules from ../modules/{app,db,vpc}
+  - Added storage-bucket.tf to config remote cloud storage bucket, to store terraform.tfstste and lock
+2. How to use
+   build app/db GCP images with packer
+   ```bash
+   cd packer
+   packer build -var-file=variables.json app.json
+   packer build -var-file=variables.json db.json
+   ```
+   to deploy stage env with terraform
+   ```bash
+   cd terraform/stage
+   terraform get
+   terraform plan
+   terraform apply #-auto-approve
+
+
