@@ -21,7 +21,7 @@ resource "google_compute_instance" "app" {
   metadata {
     ssh-keys = "appuser:${file(var.public_key_path)}"
   }
-
+  
   connection {
     type        = "ssh"
     host        = "${google_compute_address.app_ip.address}"
@@ -30,7 +30,33 @@ resource "google_compute_instance" "app" {
     private_key = "${file(var.private_key_path)}"
   }
 
-  provisioner "${remote-exec}" {
+  provisioner "remote-exec" {
+    inline = [
+      "export DTABASE_URL=${var.db_internal_ip}",
+      "echo 'export DATABASE_URL=${var.db_internal_ip}' | sudo tee /etc/profile.d/mongodb.sh",
+    ]
+  }
+
+  provisioner "file" {
+    source      = "${path.module}/files/puma.service"
+    destination = "/tmp/puma.service"
+  }
+
+  provisioner "remote-exec" {
+    script = "${path.module}/files/deploy.sh"
+  }
+}
+/*
+resource "null_resource" "app_provision" {
+  connection {
+    type        = "ssh"
+    host        = "${google_compute_address.app_ip.address}"
+    user        = "appuser"
+    agent       = false
+    private_key = "${file(var.private_key_path)}"
+  }
+
+  provisioner "remote-exec" {
     inline = [
       "export DTABASE_URL=${var.db_internal_ip}",
       "echo 'export DATABASE_URL=${var.db_internal_ip}' | sudo tee /etc/profile.d/mongodb.sh",
@@ -45,7 +71,7 @@ resource "google_compute_instance" "app" {
   provisioner "remote-exec" {
     script = "files/deploy.sh"
   }
-}
+}*/
 
 resource "google_compute_address" "app_ip" {
   name = "reddit-app-ip"
