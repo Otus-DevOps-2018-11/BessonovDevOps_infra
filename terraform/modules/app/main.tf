@@ -21,20 +21,22 @@ resource "google_compute_instance" "app" {
   metadata {
     ssh-keys = "appuser:${file(var.public_key_path)}"
   }
+
   connection {
     type        = "ssh"
+    host				= "${google_compute_address.app_ip.address}"
     user        = "appuser"
     agent       = false
     private_key = "${file(var.private_key_path)}"
   }
 
   provisioner "file" {
-    source      = "../files/puma.service"
+    source      = "files/puma.service"
     destination = "/tmp/puma.service"
   }
 
   provisioner "remote-exec" {
-    script = "../files/deploy.sh"
+    script = "files/deploy.sh"
   }
 }
 
