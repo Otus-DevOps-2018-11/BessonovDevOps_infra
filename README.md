@@ -114,5 +114,6 @@ testapp_port = 9292
    terraform get
    terraform plan
    terraform apply #-auto-approve
+   ```
 
 
