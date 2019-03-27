@@ -24,10 +24,17 @@ resource "google_compute_instance" "app" {
 
   connection {
     type        = "ssh"
-    host				= "${google_compute_address.app_ip.address}"
+    host        = "${google_compute_address.app_ip.address}"
     user        = "appuser"
     agent       = false
     private_key = "${file(var.private_key_path)}"
+  }
+
+  provisioner "${remote-exec}" {
+    inline = [
+      "export DTABASE_URL=${var.db_internal_ip}",
+      "echo 'export DATABASE_URL=${var.db_internal_ip}' | sudo tee /etc/profile.d/mongodb.sh",
+    ]
   }
 
   provisioner "file" {

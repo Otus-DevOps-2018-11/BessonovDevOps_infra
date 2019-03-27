@@ -7,6 +7,11 @@ variable region {
   default     = "europe-west1"
 }
 
+variable zone {
+  description = "GCP zone for deploy app"
+  default     = "europe-west1-b"
+}
+
 variable public_key_path {
   description = "Path to the public key used for ssh access"
 }
@@ -23,11 +28,6 @@ variable app_disk_image {
 variable db_disk_image {
   description = "Disk image for reddit db"
   default     = "reddit-db-base"
-}
-
-variable zone {
-  description = "GCP zone for deploy app"
-  default     = "europe-west1-b"
 }
 
 variable disk_image {
