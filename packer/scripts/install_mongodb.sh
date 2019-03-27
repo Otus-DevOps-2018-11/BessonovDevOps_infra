@@ -7,7 +7,6 @@ echo "deb http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.2 multiverse" 
 apt-get update
 apt-get install -y mongodb-org
 sed -i 's/bindIp:.*$/bindIp: 0.0.0.0/g' /etc/mongod.conf
-
-systemctl start mongodb
-systemctl enable mongodb
+systemctl start mongod
+systemctl enable mongod
 
