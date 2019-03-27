@@ -19,3 +19,4 @@ variable app_disk_image {
 variable "db_internal_ip" {
   description = "mongodb internal ip address"
 }
+
