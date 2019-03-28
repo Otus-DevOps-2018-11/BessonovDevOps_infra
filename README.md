@@ -146,3 +146,4 @@ task path: /home/corp/otus_devops_2018_11/BessonovDevOps_infra/ansible/clone.yml
 changed: [appserver] => {"after": "5c217c565c1122c5343dc0514c116ae816c17ca2", "before": null, "changed": true}
 META: ran handlers
 META: ran handlers
+
