@@ -2,7 +2,7 @@
   hosts: app
   become: true
   vars:
-   db_host: 10.132.15.195
+   db_host: 10.132.15.199
 
   tasks:
     - name: Add unit file for Puma
@@ -20,12 +20,12 @@
         group: appuser
 
     - name: enable puma
-      systemd: 
+      systemd:
         name: puma
         enabled: true
 
   handlers:
   - name: reload puma
-    systemd: 
+    systemd:
       name: puma
       state: restarted

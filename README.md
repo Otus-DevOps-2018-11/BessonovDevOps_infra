@@ -147,3 +147,27 @@ changed: [appserver] => {"after": "5c217c565c1122c5343dc0514c116ae816c17ca2", "b
 META: ran handlers
 META: ran handlers
 
+## home work #11 ansible-2
+1. Описание
+   В каталоге ansible созданы плейбуки:
+   * site.yml - запуск плейбуков app.yml, db,yml, deploy.yml
+   * app.yml - установка и насройка ruby, puma
+   * db.yml - установка и настройка mongodb
+   * deploy.yml - создание клона репы и установка зависимостей
+   * packer_app.yml - установка ruby (провижн app.json)
+   * packer_db.yml - установка mongodb (провижн db.json)
+   * reddit_app_multiple_plays.yml
+   * reddit_app_one_play.yml
+   * reddit_app2.yml
+
+2. Как пользоваться
+   Для запуска билда packer образов GCP, переместиться в корень репозитория
+   ```bash
+  packer build -var-file=./packer/variables.json ./packer/app.json
+  packer build -var-file=./packer/variables.json ./packer/db.json
+  ```
+  Для применения конфигурации ansible, после выполнения terraform apply
+  ```bash
+  cd ansible/
+  ansible-playbook site.yml
+  ```
