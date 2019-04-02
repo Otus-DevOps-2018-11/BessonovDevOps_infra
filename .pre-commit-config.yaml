@@ -1,0 +1,12 @@
+repos:
+- repo: git://github.com/pre-commit/pre-commit-hooks
+  rev: v2.1.0
+  hooks:
+  - id: trailing-whitespace
+  - id: end-of-file-fixer
+  - id: ansible-lint
+    name: Ansible-lint
+    description: This hook runs ansible-lint.
+    entry: ansible-lint
+    language: python
+    files: \.(yaml|yml)$
