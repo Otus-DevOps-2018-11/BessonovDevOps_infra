@@ -14,7 +14,7 @@
         mode: 0644 # <-- Права на файл, которые нужно установить
       tags: db-tag
       notify: restart mongod
-    
+
     - name: Add unit file for Puma
       become: true
       copy:
@@ -25,11 +25,11 @@
 
     - name: enable puma
       become: true
-      systemd: 
+      systemd:
         name: puma
         enabled: true
       tags: app-tag
-    
+
     - name: Add config for DB connection
       template:
         src: templates/db_config.j2
@@ -50,22 +50,22 @@
         version: monolith # <-- Указываем нужную ветку
       tags: deploy-tag
       notify: reload puma
-      
+
     - name: Bundle install
       bundler:
         state: present
         chdir: /home/appuser/reddit # <-- В какой директории выполнить команду bundle
       tags: deploy-tag
-      
+
   handlers: # <-- Добавим блок handlers и задачу
     - name: restart mongod
       become: true
-      service: 
-        name: mongod 
+      service:
+        name: mongod
         state: restarted
-    
+
     - name: reload puma
       become: true
-      systemd: 
+      systemd:
         name: puma
         state: restarted

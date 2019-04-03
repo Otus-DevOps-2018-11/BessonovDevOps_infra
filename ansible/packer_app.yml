@@ -7,10 +7,9 @@
       - ruby-full
       - ruby-bundler
       - build-essential
-  
+
   tasks:
   - name: Install ruby and rubygems and required packages
     apt:
       name: "{{ ruby_packages }}"
       state: present
-      
