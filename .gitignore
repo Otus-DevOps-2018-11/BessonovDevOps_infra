@@ -4,3 +4,4 @@
 *.tfvars
 .terraform/
 *.retry
+.vault_password_hooks
