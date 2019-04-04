@@ -9,4 +9,3 @@ gcloud compute instances create reddit-app \
   --restart-on-failure \
   --metadata-from-file \
   startup-script=startup_script.sh
-  

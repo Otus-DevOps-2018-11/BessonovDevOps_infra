@@ -21,7 +21,7 @@ resource "google_compute_instance" "app" {
   metadata {
     ssh-keys = "appuser:${file(var.public_key_path)}"
   }
-  
+  /*
   connection {
     type        = "ssh"
     host        = "${google_compute_address.app_ip.address}"
@@ -44,7 +44,7 @@ resource "google_compute_instance" "app" {
 
   provisioner "remote-exec" {
     script = "${path.module}/files/deploy.sh"
-  }
+  }*/
 }
 /*
 resource "null_resource" "app_provision" {
