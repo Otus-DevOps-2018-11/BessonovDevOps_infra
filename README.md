@@ -182,7 +182,7 @@ META: ran handlers
    * ansible.cfg - модифицирован в соответствии с новой конигурацией, изменен каталог inventory (по умолчанию stage), указан файл секрета ansible0vault
 
 2. Как пользоваться
-   Для применения конфигурации выполнить в каталоге ansible:
+  Для применения конфигурации выполнить в каталоге ansible:
   ```bash
   ansible-playbook site.yml —check
   ansible-playbook site.yml
