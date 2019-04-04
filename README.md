@@ -171,3 +171,19 @@ META: ran handlers
   cd ansible/
   ansible-playbook site.yml
   ```
+## home work #12 ansible-3
+1. Описание
+   В каталоге ansible созданы подкаталоги:
+   * environments - каталог для хранения структур и файлов окружений stage, prod
+   * playbooks - перенесены все плейбуки ansible-2
+   * old - перенесены файлы ansible-2
+   * roles - созданы роли app, db, импортирована galaxy роль для njinx
+   * vault.key - не отслеживаемый файл для хранения секрета ansible-vault
+   * ansible.cfg - модифицирован в соответствии с новой конигурацией, изменен каталог inventory (по умолчанию stage), указан файл секрета ansible0vault
+
+2. Как пользоваться
+   Для применения конфигурации выполнить в каталоге ansible:
+  ```bash
+  ansible-playbook site.yml —check
+  ansible-playbook site.yml
+  ```
