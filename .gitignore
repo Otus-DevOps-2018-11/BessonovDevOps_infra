@@ -5,4 +5,5 @@
 .terraform/
 *.retry
 .vault_password_hooks
+vault.key
 jdauphant.nginx
