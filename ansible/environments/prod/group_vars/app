@@ -1,4 +1,5 @@
-db_host: "{{ hostvars['reddit-db']['gce_private_ip'] }}"
+---
+db_host: "{{ hostvars['dbserver']['ansible_ens4']['ipv4']['address'] }}"
 nginx_sites:
   default:
     - listen 80
