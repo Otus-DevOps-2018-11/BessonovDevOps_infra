@@ -162,7 +162,7 @@ META: ran handlers
 
 2. Как пользоваться
    Для запуска билда packer образов GCP, переместиться в корень репозитория
-   ```bash
+  ```bash
   packer build -var-file=./packer/variables.json ./packer/app.json
   packer build -var-file=./packer/variables.json ./packer/db.json
   ```
