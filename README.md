@@ -186,4 +186,6 @@ META: ran handlers
   ```bash
   ansible-playbook playbooks/site.yml —check
   ansible-playbook playbooks/site.yml
+  ansible-playbook -i environments/prod/inventory playbooks/site.yml --check
+  ansible-playbook -i environments/prod/inventory playbooks/site.yml
   ```
