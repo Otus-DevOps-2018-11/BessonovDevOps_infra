@@ -184,6 +184,6 @@ META: ran handlers
 2. Как пользоваться
   Для применения конфигурации выполнить в каталоге ansible:
   ```bash
-  ansible-playbook site.yml —check
-  ansible-playbook site.yml
+  ansible-playbook playbooks/site.yml —check
+  ansible-playbook playbooks/site.yml
   ```
