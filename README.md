@@ -177,9 +177,9 @@ META: ran handlers
    * environments - каталог для хранения структур и файлов окружений stage, prod
    * playbooks - перенесены все плейбуки ansible-2
    * old - перенесены файлы ansible-2
-   * roles - созданы роли app, db, импортирована galaxy роль для njinx
+   * roles - созданы роли app, db, импортирована galaxy роль для nginx
    * vault.key - не отслеживаемый файл для хранения секрета ansible-vault
-   * ansible.cfg - модифицирован в соответствии с новой конигурацией, изменен каталог inventory (по умолчанию stage), указан файл секрета ansible0vault
+   * ansible.cfg - модифицирован в соответствии с новой конигурацией, изменен каталог inventory (по умолчанию stage), указан файл секрета ansible-vault
 
 2. Как пользоваться
   Для применения конфигурации выполнить в каталоге ansible:
