@@ -8,5 +8,5 @@ repos:
   rev: v4.1.0a0
   hooks:
   - id: ansible-lint
-    exclude: ^.travis.yml$
+    exclude: ^(.travis.yml|.*/credentials.yml)$
     files: \.(yaml|yml)$
