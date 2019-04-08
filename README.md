@@ -191,7 +191,7 @@ META: ran handlers
   ```
 ## home work #13 ansible-4
 1. Описание   
-  * В каталоге ansible создан файл Vagrantfile с описанием конфигурации ВМ (dbserver, appserver).
+  * В каталоге ansible создан файл Vagrantfile с описанием конфигурации с ВМ (dbserver, appserver).
   * В роли app, db внесены изменения для возможности использования ролей в локальном окружении, 
   в качестве provisioner vagrant. 
   * Добавлено переопределение extra_vars для правлиьной работы роли nginx.
