@@ -21,3 +21,4 @@ widely recommended `'--user' flag`_ when invoking ``pip``.
 .. code-block:: bash
 
     $ pip install 'molecule[vagrant]'
+

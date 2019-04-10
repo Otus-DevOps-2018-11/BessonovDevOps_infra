@@ -16,3 +16,4 @@
   systemd:
     name: puma
     enabled: true
+

@@ -9,3 +9,4 @@ apt-get install -y mongodb-org
 sed -i 's/bindIp:.*$/bindIp: 0.0.0.0/g' /etc/mongod.conf
 systemctl start mongod
 systemctl enable mongod
+
