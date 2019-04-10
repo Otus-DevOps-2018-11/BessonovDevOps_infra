@@ -8,13 +8,17 @@
             "source_image_family": "{{user `source_image_ubuntu`}}",
             "zone": "europe-west1-d",
             "ssh_username": "appuser",
-            "machine_type": "{{user `machine`}}"
+            "machine_type": "{{user `machine`}}",
+            "tags": "{{user `tags`}}"
         }
     ],
     "provisioners": [
         {
             "type": "ansible",
+            "extra_arguments": ["--tags","ruby"],
+            "ansible_env_vars": ["ANSIBLE_ROLES_PATH={{ pwd }}/ansible/roles"],
             "playbook_file": "ansible/playbooks/packer_app.yml"
         }
     ]
 }
+
