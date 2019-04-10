@@ -160,12 +160,12 @@ META: ran handlers
    * reddit_app_one_play.yml
    * reddit_app2.yml
 
-2. Как пользоваться   
+2. Как пользоваться
   Для запуска билда packer образов GCP, переместиться в корень репозитория
   ```bash
   packer build -var-file=./packer/variables.json ./packer/app.json
   packer build -var-file=./packer/variables.json ./packer/db.json
-  ```   
+  ```
   Для применения конфигурации ansible, после выполнения terraform apply
   ```bash
   cd ansible/
@@ -190,14 +190,14 @@ META: ran handlers
   ansible-playbook -i environments/prod/inventory playbooks/site.yml
   ```
 ## home work #13 ansible-4
-1. Описание   
+1. Описание
   * В каталоге ansible создан файл Vagrantfile с описанием конфигурации с ВМ (dbserver, appserver).
-  * В роли app, db внесены изменения для возможности использования ролей в локальном окружении, 
-  в качестве provisioner vagrant. 
+  * В роли app, db внесены изменения для возможности использования ролей в локальном окружении,
+  в качестве provisioner vagrant.
   * Добавлено переопределение extra_vars для правлиьной работы роли nginx.
   * Проверено развертывание локального окружения с vagrant up
 
-2. Как пользоваться   
+2. Как пользоваться
   Для запуска развертывания серверов в локальном окружении:
   ```bash
   vagrant validate
