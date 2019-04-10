@@ -72,3 +72,4 @@
     systemd:
       name: puma
       state: restarted
+
